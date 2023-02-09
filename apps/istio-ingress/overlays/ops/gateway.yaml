@@ -12,7 +12,7 @@ spec:
   servers:
   - hosts:
     - '*.diegoluisi.eti.br'
-    - '*.devxp-tech.io'
+    - '*.analect.io'
     port:
       name: http
       number: 80
@@ -34,6 +34,6 @@ spec:
       protocol: HTTPS
     tls:
       mode: SIMPLE
-      credentialName: devxp-tech.io # This should match the Certificate secretName
+      credentialName: analect.io # This should match the Certificate secretName
     hosts:
-    - '*.devxp-tech.io' # This should match a DNS name in the Certificate
+    - '*.analect.io' # This should match a DNS name in the Certificate

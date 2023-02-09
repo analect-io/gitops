@@ -9,8 +9,8 @@ p, role:org-admin, logs, get, *, allow
 p, role:org-admin, exec, create, */*, allow
 
 # Groups here resembles to Github Teams
-g, devxp-tech:engineering, role:org-admin
-g, devxp-tech:sre-team, role:org-admin
+g, analect:engineering, role:org-admin
+g, analect:sre-team, role:org-admin
 
 # Backstage user permissions
 g, backstage, role:org-admin

@@ -4,14 +4,14 @@ namespace: backstage
 resources:
   - postgres-config.yaml
 helmCharts:
-- name: devxp-app
-  releaseName: devxp-app
+- name: analect-app
+  releaseName: analect-app
   version: 0.1.58
-  repo: https://devxp-tech.github.io/helm-charts
+  repo: https://analect.github.io/helm-charts
   valuesInline:
     name: "backstage"
     image:
-      repository: ghcr.io/devxp-tech/backstage
+      repository: ghcr.io/analect/backstage
       tag: 9440b907
     ResourceQuota:
       enabled: false
@@ -58,10 +58,10 @@ helmCharts:
       maxReplicas: 2
       targetCPUUtilizationPercentage: 80
 
-- name: devxp-infra
-  releaseName: devxp-infra
+- name: analect-infra
+  releaseName: analect-infra
   version: 0.0.3
-  repo: https://devxp-tech.github.io/helm-charts
+  repo: https://analect.github.io/helm-charts
   valuesInline:
     name: "backstage"
     Bucket:

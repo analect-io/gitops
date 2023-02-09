@@ -43,7 +43,7 @@ helmCharts:
       GF_AUTH_GITHUB_ENABLED: true
       GF_AUTH_GITHUB_ALLOW_SIGN_UP: true
       GF_AUTH_GITHUB_SCOPES: 'user:email,read:org'
-      GF_AUTH_GITHUB_ALLOWED_ORGANIZATIONS: devxp-tech
+      GF_AUTH_GITHUB_ALLOWED_ORGANIZATIONS: analect
       GF_AUTO_ASSIGN_ORG_ROLE: Admin
 
     # autoscaling:
@@ -184,43 +184,43 @@ helmCharts:
         # Kubernetes dashboards
         core-dns:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/core-dns.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/core-dns.json"
         k8s-addons-starboard-operator:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s-addons-starboard-operator.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s-addons-starboard-operator.json"
         k8s-system-api-server:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s-system-api-server.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s-system-api-server.json"
         k8s-system-coredns:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s-system-coredns.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s-system-coredns.json"
         k8s-views-global:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s-views-global.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s-views-global.json"
         k8s-views-namespaces:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s-views-namespaces.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s-views-namespaces.json"
         k8s-views-nodes:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s-views-nodes.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s-views-nodes.json"
         k8s-views-pods:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s-views-pods.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s-views-pods.json"
         k8s_views_global-kubernetes-views-global:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s_views_global-kubernetes-views-global.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s_views_global-kubernetes-views-global.json"
         k8s_views_nodes-kubernetes-views-nodes:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s_views_nodes-kubernetes-views-nodes.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s_views_nodes-kubernetes-views-nodes.json"
         k8s_views_ns-kubernetes-views-namespaces:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s_views_ns-kubernetes-views-namespaces.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s_views_ns-kubernetes-views-namespaces.json"
         k8s_views_pods-kubernetes-views-pods:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/k8s_views_pods-kubernetes-views-pods.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/k8s_views_pods-kubernetes-views-pods.json"
         node-exporter-full:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/kubernetes/node-exporter-full.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/kubernetes/node-exporter-full.json"
       alertmanager:
         # Alertmanager dashboards
         alertmanager-grafana-dashboard:
@@ -230,32 +230,32 @@ helmCharts:
         # ArgoCD dashboards
         argocd-default:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/argocd/dashboard.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/argocd/dashboard.json"
       github:
         # GitHub dashboards
         github-default:
           datasource: GitHub
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/github/github-default.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/github/github-default.json"
         github-organization:
           datasource: GitHub
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/github/github-organization.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/github/github-organization.json"
       istio:
         # Istio dashboards
         istio-control-plane-dashboard:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/istio/istio-control-plane-dashboard.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/istio/istio-control-plane-dashboard.json"
         istio-mesh-dashboard:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/istio/istio-mesh-dashboard.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/istio/istio-mesh-dashboard.json"
         istio-service-dashboard:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/istio/istio-service-dashboard.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/istio/istio-service-dashboard.json"
         istio-wasm-extension-dashboard:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/istio/istio-wasm-extension-dashboard.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/istio/istio-wasm-extension-dashboard.json"
         istio-workload-dashboard:
           datasource: Prometheus
-          url: "https://raw.githubusercontent.com/devxp-tech/grafana-dashboards/main/dashboards/istio/istio-workload-dashboard.json"
+          url: "https://raw.githubusercontent.com/analect/grafana-dashboards/main/dashboards/istio/istio-workload-dashboard.json"
       loki:
         # Loki dashboards
         loki-stack-monitoring:

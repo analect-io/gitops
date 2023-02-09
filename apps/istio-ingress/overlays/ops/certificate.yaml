@@ -15,13 +15,13 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: devxp-tech.io
+  name: analect.io
 spec:
-  commonName: devxp-tech.io
+  commonName: analect.io
   dnsNames:
-  - devxp-tech.io
-  - '*.devxp-tech.io'
+  - analect.io
+  - '*.analect.io'
   issuerRef:
     kind: ClusterIssuer
-    name: devxp-tech.io
-  secretName: devxp-tech.io
+    name: analect.io
+  secretName: analect.io

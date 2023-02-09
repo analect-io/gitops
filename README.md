@@ -1,4 +1,4 @@
-[![main](https://github.com/devxp-tech/gitops/actions/workflows/main.yaml/badge.svg)](https://github.com/devxp-tech/gitops/actions/workflows/main.yaml)
+[![main](https://github.com/analect/gitops/actions/workflows/main.yaml/badge.svg)](https://github.com/analect/gitops/actions/workflows/main.yaml)
 [![Quality Gate Status](https://sonar.diegoluisi.eti.br/api/project_badges/measure?project=gitops&metric=alert_status&token=f2955563c1490d9562ba76db3c4a7c4afdc9efba)](https://sonar.diegoluisi.eti.br/dashboard?id=gitops)
 [![App Status](https://argocd.diegoluisi.eti.br/api/badge?name=argo-cd&revision=true)](https://argocd.diegoluisi.eti.br/applications/argo-cd)
 # ⚙️ GitOps
@@ -125,6 +125,6 @@ We ❤️ contributions big or small. [See our guide](contributing.md) on how to
 
 ### Thanks to all our contributors!
 
-<a href="https://github.com/devxp-tech/gitops/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=devxp-tech/gitops" />
+<a href="https://github.com/analect/gitops/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=analect/gitops" />
 </a>

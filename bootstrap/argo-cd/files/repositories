@@ -1,11 +1,11 @@
 - name: gitops
-  url: https://github.com/devxp-tech/gitops.git
+  url: https://github.com/analect/gitops.git
 - name: crossplane
   type: helm
   url: https://charts.crossplane.io/stable
 - name: grafana
   type: helm
   url: https://grafana.github.io/helm-charts
-- name: devxp-tech
+- name: analect
   type: helm
-  url: https://devxp-tech.github.io/helm-charts
+  url: https://analect.github.io/helm-charts

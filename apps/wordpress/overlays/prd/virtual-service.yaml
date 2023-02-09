@@ -5,8 +5,7 @@ metadata:
   namespace: wordpress
 spec:
   hosts:
-  - "www.diegoluisi.eti.br"
-  - "blog.devxp-tech.io"
+  - "blog.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
   http:
