@@ -6,7 +6,7 @@ metadata:
   namespace: monitoring
 spec:
   hosts:
-  - "grafana.diegoluisi.eti.br"
+  - "grafana.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
   http:

@@ -8,7 +8,7 @@ metadata:
     app: kiali
 spec:
   hosts:
-  - "kiali.diegoluisi.eti.br"
+  - "kiali.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
   http:

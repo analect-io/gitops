@@ -6,7 +6,7 @@ metadata:
   namespace: observability
 spec:
   hosts:
-  - "jaeger.diegoluisi.eti.br"
+  - "jaeger.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
   http:

@@ -1,6 +1,6 @@
 [![main](https://github.com/analect/gitops/actions/workflows/main.yaml/badge.svg)](https://github.com/analect/gitops/actions/workflows/main.yaml)
-[![Quality Gate Status](https://sonar.diegoluisi.eti.br/api/project_badges/measure?project=gitops&metric=alert_status&token=f2955563c1490d9562ba76db3c4a7c4afdc9efba)](https://sonar.diegoluisi.eti.br/dashboard?id=gitops)
-[![App Status](https://argocd.diegoluisi.eti.br/api/badge?name=argo-cd&revision=true)](https://argocd.diegoluisi.eti.br/applications/argo-cd)
+[![Quality Gate Status](https://sonar.analect.com/api/project_badges/measure?project=gitops&metric=alert_status&token=f2955563c1490d9562ba76db3c4a7c4afdc9efba)](https://sonar.analect.com/dashboard?id=gitops)
+[![App Status](https://argocd.analect.com/api/badge?name=argo-cd&revision=true)](https://argocd.analect.com/applications/argo-cd)
 # ⚙️ GitOps
 
 GitOps is a set of best practices where the entire code delivery process is controlled via Git, including infrastructure and application definition as code and automation to complete updates and rollbacks.

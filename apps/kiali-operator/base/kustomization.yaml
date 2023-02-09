@@ -27,10 +27,10 @@ helmCharts:
               token: secret:kiali-secrets:grafanaToken
             enabled: true
             in_cluster_url: http://grafana.monitoring
-            url: https://grafana.diegoluisi.eti.br
+            url: https://grafana.analect.com
           tracing:
             enabled: true
             in_cluster_url: 'http://tracing.istio-system/jaeger'
             use_grpc: false
             # Public facing URL of Jaeger
-            url: 'https://jaeger.diegoluisi.eti.br/jaeger'
+            url: 'https://jaeger.analect.com/jaeger'

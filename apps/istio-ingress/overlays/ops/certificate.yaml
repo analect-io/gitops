@@ -1,27 +1,14 @@
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: diegoluisi.eti.br
-spec:
-  commonName: diegoluisi.eti.br
-  dnsNames:
-  - diegoluisi.eti.br
-  - '*.diegoluisi.eti.br'
-  issuerRef:
-    kind: ClusterIssuer
-    name: diegoluisi.eti.br
-  secretName: diegoluisi.eti.br
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
-metadata:
-  name: analect.io
-spec:
-  commonName: analect.io
-  dnsNames:
-  - analect.io
-  - '*.analect.io'
+metadataanalect.com
+  name: analect.com
+spec:analect.com
+  commonName: analect.com
+  dnanalect.com
+  - anaanalect.com
+  - '*.analect.com'
   issuerRef:
-    kind: ClusterIssuer
-    name: analect.io
-  secretName: analect.io
+    kind: analect.com
+    name: analanalect.com
+  secretName: analect.com

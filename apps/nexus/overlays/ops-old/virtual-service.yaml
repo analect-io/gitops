@@ -6,7 +6,7 @@ metadata:
   namespace: nexus
 spec:
   hosts:
-  - "nexus.diegoluisi.eti.br"
+  - "nexus.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
   http:

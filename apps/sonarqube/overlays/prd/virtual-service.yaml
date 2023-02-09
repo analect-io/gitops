@@ -5,7 +5,7 @@ metadata:
   namespace: sonarqube
 spec:
   hosts:
-  - "sonar.diegoluisi.eti.br"
+  - "sonar.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
   http:

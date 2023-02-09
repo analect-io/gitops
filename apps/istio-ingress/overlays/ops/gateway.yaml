@@ -11,8 +11,7 @@ spec:
     istio: ingressgateway
   servers:
   - hosts:
-    - '*.diegoluisi.eti.br'
-    - '*.analect.io'
+    - '*.analect.com
     port:
       name: http
       number: 80
@@ -20,20 +19,11 @@ spec:
     tls:
       httpsRedirect: true
   - port:
-      name: https-diegoluisi
+      name: https-analect
       number: 443
       protocol: HTTPS
     tls:
       mode: SIMPLE
-      credentialName: diegoluisi.eti.br # This should match the Certificate secretName
-    hosts:
-    - '*.diegoluisi.eti.br' # This should match a DNS name in the Certificate
-  - port:
-      name: https-devxp
-      number: 443
-      protocol: HTTPS
-    tls:
-      mode: SIMPLE
-      credentialName: analect.io # This should match the Certificate secretName
-    hosts:
-    - '*.analect.io' # This should match a DNS name in the Certificate
+      credentialName: analect.com # This should match the Certificate secretName
+    hosts:analect.com
+    - '*.analect.com' # This should match a DNS name in the Certificateanalect.com
