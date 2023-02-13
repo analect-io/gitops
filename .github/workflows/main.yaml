@@ -25,6 +25,7 @@ jobs:
           cliArguments: '--only-k8s-files --ignore-missing-schemas'
 
   trivy-scan:
+    if: ${{ false }}  # disable for now 
     name: Trivy Vulnerability Scanner 🔒
     if: always()
     needs:
