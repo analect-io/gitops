@@ -24,33 +24,32 @@ jobs:
           path: 'apps/*/base/*.yaml'
           cliArguments: '--only-k8s-files --ignore-missing-schemas'
 
-  trivy-scan:
-    if: ${{ false }}  # disable for now 
-    name: Trivy Vulnerability Scanner 🔒
-    if: always()
-    needs:
-      - datree-check
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout code 🛎️
-        uses: actions/checkout@v3
+  # trivy-scan:
+  #   name: Trivy Vulnerability Scanner 🔒
+  #   if: always()
+  #   needs:
+  #     - datree-check
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Checkout code 🛎️
+  #       uses: actions/checkout@v3
 
-      - name: Run Trivy vulnerability scanner in IaC mode 🔎
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'config'
-          hide-progress: false
-          format: 'sarif'
-          output: 'trivy-results.sarif'
-          exit-code: '1'
-          ignore-unfixed: true
-          severity: 'CRITICAL,HIGH'
+  #     - name: Run Trivy vulnerability scanner in IaC mode 🔎
+  #       uses: aquasecurity/trivy-action@master
+  #       with:
+  #         scan-type: 'config'
+  #         hide-progress: false
+  #         format: 'sarif'
+  #         output: 'trivy-results.sarif'
+  #         exit-code: '1'
+  #         ignore-unfixed: true
+  #         severity: 'CRITICAL,HIGH'
 
-      - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v2
-        if: always()
-        with:
-          sarif_file: 'trivy-results.sarif'
+  #     - name: Upload Trivy scan results to GitHub Security tab
+  #       uses: github/codeql-action/upload-sarif@v2
+  #       if: always()
+  #       with:
+  #         sarif_file: 'trivy-results.sarif'
 
   sonarqube:
     name: SonarQube Scan 🔍
