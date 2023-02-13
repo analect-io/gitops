@@ -57,7 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - datree-check
-      - trivy-scan
+#      - trivy-scan
     steps:
     - uses: actions/checkout@master
     - name: SonarQube Scan 🔍
