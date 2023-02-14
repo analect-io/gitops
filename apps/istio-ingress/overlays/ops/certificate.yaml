@@ -1,14 +1,14 @@
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
-metadataanalect.com
+metadata:
   name: analect.com
 spec:analect.com
   commonName: analect.com
-  dnanalect.com
-  - anaanalect.com
+  dnsNames:
+  - analect.com
   - '*.analect.com'
   issuerRef:
-    kind: analect.com
-    name: analanalect.com
+    kind: ClusterIssuer
+    name: analect.com
   secretName: analect.com
