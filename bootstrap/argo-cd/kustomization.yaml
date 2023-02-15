@@ -36,7 +36,7 @@ configMapGenerator:
       - admin.enabled=true
       - kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone"
       - statusbadge.enabled=true
-      - url=https://argocd.analect.com
+      - url=http://argocd-server.argocd.svc
       - accounts.backstage="apiKey, login"
     name: argocd-cm
   - behavior: merge
