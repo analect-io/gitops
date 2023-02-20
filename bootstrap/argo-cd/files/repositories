@@ -1,5 +1,5 @@
 - name: gitops
-  url: https://github.com/analect/gitops.git
+  url: https://github.com/analect-io/gitops.git
 - name: crossplane
   type: helm
   url: https://charts.crossplane.io/stable

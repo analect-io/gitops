@@ -37,7 +37,7 @@ spec:
   - git:
       files:
       - path: apps/**/default/config.json
-      repoURL: https://github.com/analect/gitops.git
+      repoURL: https://github.com/analect-io/gitops.git
       requeueAfterSeconds: 20
       revision: ""
       template:
@@ -50,7 +50,7 @@ spec:
   - git:
       files:
       - path: apps/**/default/config_dir.json
-      repoURL: https://github.com/analect/gitops.git
+      repoURL: https://github.com/analect-io/gitops.git
       requeueAfterSeconds: 20
       revision: ""
       template:

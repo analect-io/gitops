@@ -4,7 +4,7 @@
   "destNamespace": "sonarqube",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "apps/sonarqube/overlays/prd",
-  "srcRepoURL": "https://github.com/analect/gitops.git",
+  "srcRepoURL": "https://github.com/analect-io/gitops.git",
   "srcTargetRevision": "",
   "CreateNamespace": true,
   "labels": null

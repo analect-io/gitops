@@ -21,7 +21,7 @@ spec:
   project: default
   source:
     path: projects
-    repoURL: https://github.com/analect/gitops.git
+    repoURL: https://github.com/analect-io/gitops.git
   syncPolicy:
     automated:
       allowEmpty: true

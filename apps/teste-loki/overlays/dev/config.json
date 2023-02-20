@@ -4,7 +4,7 @@
   "destNamespace": "teste-loki",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "apps/teste-loki/overlays/dev",
-  "srcRepoURL": "https://github.com/analect/gitops.git",
+  "srcRepoURL": "https://github.com/analect-io/gitops.git",
   "srcTargetRevision": "",
   "CreateNamespace": true,
   "labels": null
