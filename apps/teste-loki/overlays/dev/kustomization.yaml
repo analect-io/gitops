@@ -16,7 +16,7 @@ helmCharts:
     - secretRef:
         name: postgres-secrets
     image:
-      repository: ghcr.io/analect/teste-loki
+      repository: ghcr.io/analect-io/teste-loki
       tag: 08acc92e
     ResourceQuota:
       enabled: false
