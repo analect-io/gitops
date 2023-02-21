@@ -3,12 +3,11 @@ kind: Kustomization
 namespace: teste-loki
 resources:
 - ../../base
-- auth-policy.yaml
 - postgres-secrets-sealed.yaml
 helmCharts:
 - name: analect-app
-  releaseName: analect-app
-  version: 0.1.58
+  releaseName: devxp-app
+  version: 0.1.62
   repo: https://analect-io.github.io/helm-charts
   valuesInline:
     name: teste-loki
@@ -17,23 +16,33 @@ helmCharts:
         name: postgres-secrets
     image:
       repository: ghcr.io/analect-io/teste-loki
-      tag: 08acc92e
+      tag: 72a41ba8
+    network:
+      domain: analect.com
     ResourceQuota:
       enabled: false
     migration:
       enabled: false
+    PeerAuthentication:
+      enabled: true
     autoscaling:
       enabled: true
       minReplicas: 1
       maxReplicas: 2
       targetCPUUtilizationPercentage: 80
-    resources:
-      requests:
-        memory:
-        cpu:
-      limits:
-        memory:
-        cpu:
+    livenessProbe:
+      httpGet:
+        path: /health-check/liveness
+        port: 8080
+      initialDelaySeconds: 15
+      periodSeconds: 10
+    readinessProbe:
+      httpGet:
+        path: /health-check/readiness
+        port: 8080
+      initialDelaySeconds: 15
+      periodSeconds: 10
+
 # - name: postgresql
 #   releaseName: postgresql
 #   version: 12.1.5

@@ -1,12 +1,12 @@
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
-  name: kiali-operator-policy
-  namespace: kiali-operator
+  name: teste-loki-policy
+  namespace: teste-loki
 spec:
   selector:
     matchLabels:
-      app: kiali
+      app: teste-loki
   action: DENY
   rules:
     - to:
