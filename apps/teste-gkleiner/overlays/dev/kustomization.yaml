@@ -6,11 +6,11 @@ helmCharts:
 - name: devxp-app
   releaseName: devxp-app
   version: 0.1.62
-  repo: https://devxp-tech.github.io/helm-charts
+  repo: https://analect-io.github.io/helm-charts
   valuesInline:
     name: teste-gkleiner
     image:
-      repository: ghcr.io/devxp-tech/teste-gkleiner
+      repository: ghcr.io/analect-io/teste-gkleiner
       tag: 975c0a0d
     autoscaling:
       enabled: true
@@ -26,7 +26,7 @@ helmCharts:
         cpu: 100m
     network:
       enabled: true
-      domain: devxp-tech.io
+      domain: analect-io.io
       service:
         type: 
         port: 8080

@@ -6,7 +6,7 @@ resources:
 - postgres-secrets-sealed.yaml
 helmCharts:
 - name: analect-app
-  releaseName: devxp-app
+  releaseName: analect-app
   version: 0.1.62
   repo: https://analect-io.github.io/helm-charts
   valuesInline:

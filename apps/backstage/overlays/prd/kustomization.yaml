@@ -10,11 +10,11 @@ helmCharts:
 - name: devxp-app
   releaseName: devxp-app
   version: 0.1.58
-  repo: https://devxp-tech.github.io/helm-charts
+  repo: https://analect-io.github.io/helm-charts
   valuesInline:
     name: "backstage"
     image:
-      repository: ghcr.io/devxp-tech/backstage
+      repository: ghcr.io/analect-io/backstage
       tag: 36f36eee
     ResourceQuota:
       enabled: false
@@ -64,7 +64,7 @@ helmCharts:
 - name: devxp-infra
   releaseName: devxp-infra
   version: 0.0.3
-  repo: https://devxp-tech.github.io/helm-charts
+  repo: https://analect-io.github.io/helm-charts
   valuesInline:
     name: "backstage"
     Bucket:
