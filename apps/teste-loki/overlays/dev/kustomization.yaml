@@ -9,7 +9,7 @@ helmCharts:
 - name: analect-app
   releaseName: analect-app
   version: 0.1.58
-  repo: https://analect.github.io/helm-charts
+  repo: https://analect-io.github.io/helm-charts
   valuesInline:
     name: teste-loki
     envFrom:

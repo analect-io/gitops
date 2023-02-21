@@ -8,4 +8,4 @@
   url: https://grafana.github.io/helm-charts
 - name: analect
   type: helm
-  url: https://analect.github.io/helm-charts
+  url: https://analect-io.github.io/helm-charts
