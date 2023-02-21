@@ -10,7 +10,7 @@ helmCharts:
   valuesInline:
     cassandra:
       config:
-        cluster_domain: lgsk8sp1.grupologos.local
+        cluster_domain: cluster.local
     collector:
       service:
         zipkin:

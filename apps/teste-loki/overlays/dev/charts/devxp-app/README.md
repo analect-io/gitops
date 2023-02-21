@@ -29,7 +29,7 @@ Helm Charts for default DevXP-Tech Application
 | autoscaling.maxReplicas | int | `4` | maxReplicas is the number of maximum scaling pods |
 | autoscaling.minReplicas | int | `2` | minReplicas is the number of mim pods to be running |
 | autoscaling.targetCPUUtilizationPercentage | int | `70` | targetCPUUtilizationPercentage is the percentage of CPU utilization do Scaling |
-| cluster | string | `"lgsk8sp1.grupologos.local"` | cluster Set Cluster Name |
+| cluster | string | `"cluster.local"` | cluster Set Cluster Name |
 | container.port | int | `8080` | port is the port your application runs under |
 | env | list | `[]` |  |
 | envFrom | list | `[]` |  |

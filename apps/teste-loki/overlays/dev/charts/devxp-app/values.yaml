@@ -6,7 +6,7 @@
 name: ""
 
 # --cluster Set Cluster Name
-cluster: lgsk8sp1.grupologos.local
+cluster: cluster.local
 
 # -- Network
 network:
