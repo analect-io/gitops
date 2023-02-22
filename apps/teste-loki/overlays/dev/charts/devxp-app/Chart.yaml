@@ -1,10 +1,10 @@
 apiVersion: v2
 appVersion: 1.0.0
-description: Helm Charts for default DevXP-Tech Application
+description: Helm Charts for default Analect Application
 icon: https://github.com/analect-io/helm-charts/blob/main/charts/tooling/helm-icon.png
 maintainers:
-- email: contato@diegoluisi.eti.br
-  name: diegoluisi
-name: devxp-app
+- email: info@analect.com
+  name: analect
+name: analect-app
 type: application
 version: 0.1.62

@@ -7,8 +7,8 @@ resources:
 - postgres-config.yaml
 - ../../base
 helmCharts:
-- name: devxp-app
-  releaseName: devxp-app
+- name: analect-app
+  releaseName: analect-app
   version: 0.1.58
   repo: https://analect-io.github.io/helm-charts
   valuesInline:
@@ -61,8 +61,8 @@ helmCharts:
       maxReplicas: 2
       targetCPUUtilizationPercentage: 80
 
-- name: devxp-infra
-  releaseName: devxp-infra
+- name: analect-infra
+  releaseName: analect-infra
   version: 0.0.3
   repo: https://analect-io.github.io/helm-charts
   valuesInline:
