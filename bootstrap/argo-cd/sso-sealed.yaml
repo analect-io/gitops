@@ -6,9 +6,8 @@ metadata:
   namespace: argocd
 spec:
   encryptedData:
-    dex.github.clientSecret: AgAWTxol0Q/j0GExwBRxjUrO0aT8pEDbTv+95D71oTEND3c9+6XMzTwksiUgz1kHxYjqSIVojNZ2yiNKMu8mqmcQMpqeQzdaArZqFQYVhsiuEWl7kuN6FctyyLquEr/kZpyS/bXLl6uOn50EeQegujVo3wLsHkipYTeZ4aCAKuu2J2ViIv+98y5Znl5sGoDQiCRQlP5XTY0l1iu8h9FL4yuIwXix6ElbMLU0EZjoV6oRUSdeCx2UuV4yEO/339R7N7K7/ad6ulfuOHrHGFruNWPVsuPFvmr06BZEqaBv6cQXzj+XIyOD2AyFsmap+Y9M9XwbgB4aNx65ju6AGT4p1PCRMZdRrNwfFGbXJHnGZjL8YLatuIOQQJlphSmbpdfdCX2in94diM8mRfmG/tMn6zdrUafFK6SKx0UqM0b3QFzGnGenIC3DbuHnbhpolyTniGpceaxE6Jmpovtu/K5ChI956+bEJr8JbWF5hALDt522u1SRs1AkfuVCaO1pzsZwRms4yjxE0Vh1M6OYvA/B+HBUNsd+fYKcTwaD7djXD/jEDw8ZwYA5WPnK1hGvLJ7rb5EkxAkW/CCdmuuUl6NHt8G4SFtPlSMwndNx3XSJ4mB2B7Fio0wa/bpT+XgkSh9EHjXzwZoGQLHBaSvy3iyuecbOYtLAs4TGO7+S7KhPDWAOyufVPfjnsb//vAkti2YLie+rxF2RFPKUj+aNxIPsY492sBvb0ZpfbFTEa8REVuyE7Sh1G4Mdpyma
+    dex.github.clientSecret: AgAQ1o2oCa3213c6FWVLk2o7q7IzQGArwcQtc3hx4NP6TI3qnItddC7OovUp9hcAO8h6IBYTjlFjKNjN9fG9DcUJYGbRCXEAlqy6L/mNzdooX04pru/tBYstQTQd1GxJRSAG60cwRi1vJV3fubdQY3NHACHcBp2hFrY+4WSSg/v7QiSvV9lE6+vB/dB6ViB/txUjhxz1Lpkwil6gztZidVvjrr2RqM4vr1q4Uv4+TOa9uDX+On8HEqinE2G3IxobaRH93ZMuiglXqkrG8cqdi+23K/lPHAEeiT9wfWmNgiITuUuEit3UIdm1sZI0GkSyKD1Yt2ZFsFofjhtg5ic4qqdEYNi7trMaoQNUL93RidhnKsLTemtzZz851t+xaYYL3xN4RG9+9OSHl8UvAzw8tcEuvLom4F7m8kLdbeUu0o/54QoxF8nKnAVwjyW6waLxqwBtyekarX9g1C5z9oc5FC16QqFlLmn9SpGmujDoe46nZs9spvOdbdSio+8/NorQAwTFmDMQgN9aPQ8xJg+wL/ROb/34Iin9eaZv3jtE8GaA4Q2QshjDsjjgbM2wr3pteo63vO0B8Ce4UkIQB0joaQSYn3bAJcr2a22W8bbuxZqJCdXwCDpvgfZfbzRcViSHRGK3fQXHczaaB03W33zzqH/AZvD+A2ofCZAHZIXsVYB55a6cSofw9OMXZRgH5571yh/R5JRiDGAu+XyUxOiRE06rk7trDQt+Rme4YHcR6Q==
   template:
-    data: null
     metadata:
       creationTimestamp: null
       labels:
@@ -16,3 +15,4 @@ spec:
       name: sso
       namespace: argocd
     type: Opaque
+
