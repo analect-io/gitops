@@ -46,8 +46,8 @@ Helm Charts for default Analect Application
 | livenessProbe.periodSeconds | int | `10` |  |
 | migration.enabled | bool | `false` | enable liquibase migration |
 | name | string | `""` | name is the github repository name of this application deploy |
-| network | object | `{"domain":"diegoluisi.eti.br","service":{"port":80}}` | Network |
-| network.domain | string | `"diegoluisi.eti.br"` | domain Set Default Domain |
+| network | object | `{"domain":"analect.com","service":{"port":80}}` | Network |
+| network.domain | string | `"analect.com"` | domain Set Default Domain |
 | network.service | object | `{"port":80}` | service An abstract way to expose an application running on a set of Pods as a network service. |
 | network.service.port | int | `80` | port is the port your application runs under |
 | nodeSelector | object | `{}` |  |
