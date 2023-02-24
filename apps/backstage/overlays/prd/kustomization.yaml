@@ -15,7 +15,7 @@ helmCharts:
     name: "backstage"
     image:
       repository: ghcr.io/analect-io/backstage
-      tag: 52fd126b
+      tag: 90f66adc
     ResourceQuota:
       enabled: false
     container:
