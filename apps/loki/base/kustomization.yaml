@@ -12,7 +12,7 @@ helmCharts:
     fullnameOverride: loki
     global:
       dnsService: coredns
-      clusterDomain: cluster.local
+      clusterDomain: civo.cluster
     labels:
       app: loki
     loki:

@@ -13,7 +13,7 @@ spec:
     solvers:
     - dns01:
         route53:
-          region: us-east-1
+          region: eu-west-1
       selector:
         dnsZones:
         - analect.com

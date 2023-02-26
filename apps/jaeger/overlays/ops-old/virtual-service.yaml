@@ -17,4 +17,4 @@ spec:
     - destination:
         port:
           number: 80
-        host: jaeger-query.observability.svc.cluster.local
+        host: jaeger-query.observability.svc.civo.cluster
