@@ -11,7 +11,7 @@ spec:
     istio: ingressgateway
   servers:
   - hosts:
-    - '*.analect.com
+    - '*.analect.com'
     port:
       name: http
       number: 80
@@ -25,5 +25,5 @@ spec:
     tls:
       mode: SIMPLE
       credentialName: analect.com # This should match the Certificate secretName
-    hosts:analect.com
-    - '*.analect.com' # This should match a DNS name in the Certificateanalect.com
+    hosts:
+    - '*.analect.com' # This should match a DNS name in the Certificate
