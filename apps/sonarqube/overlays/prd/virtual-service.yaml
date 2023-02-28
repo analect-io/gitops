@@ -16,4 +16,4 @@ spec:
     - destination:
         port:
           number: 80
-        host: sonarqube.sonarqube.svc.civo.cluster
+        host: sonarqube.sonarqube.svc.cluster.local

@@ -10,7 +10,7 @@ helmCharts:
   valuesInline:
     cassandra:
       config:
-        cluster_domain: civo.cluster
+        cluster_domain: cluster.local
     collector:
       service:
         zipkin:

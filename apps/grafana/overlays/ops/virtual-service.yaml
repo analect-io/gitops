@@ -17,4 +17,4 @@ spec:
     - destination:
         port:
           number: 80
-        host: grafana.monitoring.svc.civo.cluster
+        host: grafana.monitoring.svc.cluster.local

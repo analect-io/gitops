@@ -16,4 +16,4 @@ spec:
     - destination:
         port:
           number: 20001
-        host: kiali.kiali-operator.svc.civo.cluster
+        host: kiali.kiali-operator.svc.cluster.local
