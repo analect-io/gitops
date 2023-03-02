@@ -13,7 +13,11 @@ spec:
     solvers:
     - dns01:
         route53:
+          accessKeyID: AKIAWO6ZTPDZQLTY2GI7 #restricted functionality
           region: eu-west-1
+          secretAccessKeySecretRef:
+            name: aws-route53-secret-access-key-secret
+            key: secret-access-key
       selector:
         dnsZones:
         - analect.com
