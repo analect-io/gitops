@@ -1,0 +1,11 @@
+{
+  "appName": "loki",
+  "userGivenName": "loki",
+  "destNamespace": "monitoring",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/loki/overlays/ops",
+  "srcRepoURL": "https://github.com/analect-io/gitops.git",
+  "srcTargetRevision": "",
+  "CreateNamespace": true,
+  "labels": null
+}
