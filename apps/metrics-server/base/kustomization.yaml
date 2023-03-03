@@ -16,7 +16,8 @@ helmCharts:
     args:
       - --cert-dir=/tmp
       - --kubelet-use-node-status-port
+      - --secure-port=4443
       - --kubelet-insecure-tls
       - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-      # - --metric-resolution=30s
+      - --metric-resolution=30s
       - --secure-port=10250
