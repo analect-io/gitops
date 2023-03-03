@@ -7,8 +7,8 @@ helmCharts:
   version: 3.8.3
   repo: https://kubernetes-sigs.github.io/metrics-server/
   valuesInline:
-    apiService:
-      create: true
+    # apiService:
+    #   create: true
     metrics:
       enabled: true
     hostNetwork:
@@ -16,8 +16,7 @@ helmCharts:
     args:
       - --cert-dir=/tmp
       - --kubelet-use-node-status-port
+      - --secure-port=4443
       - --kubelet-insecure-tls
       - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-      - --secure-port=10250
-      #- --metric-resolution=30s
-
+      - --metric-resolution=30s
