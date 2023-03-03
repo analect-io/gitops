@@ -16,7 +16,7 @@ helmCharts:
         name: postgres-secrets
     image:
       repository: ghcr.io/analect-io/teste-loki
-      tag: 72a41ba8
+      tag: 0e43448a
     network:
       domain: analect.com
     ResourceQuota:
