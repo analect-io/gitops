@@ -8,4 +8,4 @@ roleRef:
   name: cluster-admin
 subjects:
 - kind: Group
-  name: devxp-tech:sre-team
+  name: analect-io:sre-team

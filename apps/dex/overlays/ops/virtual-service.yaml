@@ -6,7 +6,7 @@ metadata:
   namespace: dex
 spec:
   hosts:
-  - "dex.diegoluisi.eti.br"
+  - "dex.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
   http:
@@ -27,7 +27,7 @@ metadata:
   namespace: dex
 spec:
   hosts:
-  - "kubelogin.diegoluisi.eti.br"
+  - "kubelogin.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
   http:

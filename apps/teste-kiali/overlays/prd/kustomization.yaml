@@ -27,7 +27,7 @@ helmCharts:
         cpu: 100m
     network:
       enabled: true
-      domain: analect-io.io
+      domain: analect.com
       service:
         type: ClusterIP
         port: 80
