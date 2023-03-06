@@ -1,6 +1,6 @@
-# Below permissions is for admins
+# admin all-clusters roles =====================================
 p, role:org-admin, applications, *, */*, allow
-p, role:org-admin, clusters, get, *, allow
+p, role:org-admin, clusters, *, *, allow
 p, role:org-admin, repositories, get, *, allow
 p, role:org-admin, repositories, create, *, allow
 p, role:org-admin, repositories, update, *, allow
@@ -8,8 +8,16 @@ p, role:org-admin, repositories, delete, *, allow
 p, role:org-admin, logs, get, *, allow
 p, role:org-admin, exec, create, */*, allow
 
+# Policy for Developers Team 
+p, role:dev-team, clusters, get, *, allow
+p, role:dev-team, repositories, get, *, allow
+p, role:dev-team, applications, sync, */*, allow
+p, role:dev-team, applications, get, */*, allow
+p, role:dev-team, applications, delete, */pod, allow
+p, role:dev-team, applications, action/*, */*, allow
+
 # Groups here resembles to Github Teams
-g, analect-io:engineering, role:org-admin
+g, analect-io:dev-team, role:dev-team
 g, analect-io:sre-team, role:org-admin
 
 # Backstage user permissions

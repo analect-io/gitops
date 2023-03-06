@@ -7,13 +7,17 @@ metadata:
   labels:
     app: kiali
 spec:
-  hosts:
-  - "kiali.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
+  hosts:
+  - "kiali.analect.com"
   http:
-  - route:
+  - headers:
+      request:
+        set:
+          X-Forwarded-Port: "443"
+    route:
     - destination:
+        host: kiali.kiali-operator.svc.cluster.local
         port:
           number: 20001
-        host: kiali.kiali-operator.svc.cluster.local

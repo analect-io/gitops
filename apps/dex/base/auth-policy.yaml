@@ -1,12 +1,12 @@
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
-  name: kiali-operator-policy
-  namespace: kiali-operator
+  name: dex-policy
+  namespace: dex
 spec:
   selector:
     matchLabels:
-      app: kiali
+      app: dex
   action: DENY
   rules:
     - to:

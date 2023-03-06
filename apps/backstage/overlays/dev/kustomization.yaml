@@ -7,15 +7,15 @@ resources:
 - postgres-config.yaml
 - ../../base
 helmCharts:
-- name: analect-app
-  releaseName: analect-app
-  version: 0.1.68
-  repo: https://analect-io.github.io/helm-charts
+- name: devxp-app
+  releaseName: devxp-app
+  version: 0.1.58
+  repo: https://devxp-tech.github.io/helm-charts
   valuesInline:
     name: "backstage"
     image:
-      repository: ghcr.io/analect-io/backstage
-      tag: f8e7ff2e
+      repository: ghcr.io/devxp-tech/backstage
+      tag: 8606c2fe
     ResourceQuota:
       enabled: false
     container:
@@ -45,7 +45,7 @@ helmCharts:
         path: "/healthcheck"
         httpHeaders:
         - name: Host
-          value: backstage.analect.com
+          value: backstage.diegoluisi.eti.br
     livenessProbe:
       initialDelaySeconds: 15
       periodSeconds: 10
@@ -54,17 +54,17 @@ helmCharts:
         path: "/healthcheck"
         httpHeaders:
         - name: Host
-          value: backstage.analect.com
+          value: backstage.diegoluisi.eti.br
     autoscaling:
       enabled: true
       minReplicas: 1
       maxReplicas: 2
       targetCPUUtilizationPercentage: 80
 
-- name: analect-infra
-  releaseName: analect-infra
+- name: devxp-infra
+  releaseName: devxp-infra
   version: 0.0.3
-  repo: https://analect-io.github.io/helm-charts
+  repo: https://devxp-tech.github.io/helm-charts
   valuesInline:
     name: "backstage"
     Bucket:
