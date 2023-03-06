@@ -12,7 +12,7 @@ helmCharts:
     commonLabels:
       app: sonarqube
       version: 9.7.1
-    sonarqubeEmail: info@analect.io
+    sonarqubeEmail: info@analect.com
     sonarqubeUsername: admin
     existingSecret: sonarqube-postgresql-secret
     minHeapSize: 512m
