@@ -126,5 +126,5 @@ We ❤️ contributions big or small. [See our guide](contributing.md) on how to
 ### Thanks to all our contributors!
 
 <a href="https://github.com/analect-io/gitops/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=analect/gitops" />
+  <img src="https://contrib.rocks/image?repo=analect-io/gitops" />
 </a>
