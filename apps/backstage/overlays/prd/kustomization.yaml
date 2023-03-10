@@ -58,7 +58,7 @@ helmCharts:
     autoscaling:
       enabled: true
       minReplicas: 1
-      maxReplicas: 2
+      maxReplicas: 1
       targetCPUUtilizationPercentage: 80
 
 - name: analect-infra
