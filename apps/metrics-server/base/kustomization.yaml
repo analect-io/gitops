@@ -20,4 +20,4 @@ helmCharts:
       - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
       - --metric-resolution=60s
       - --secure-port=4443
-      #- --permit-port-sharing
+      - --permit-port-sharing
