@@ -18,6 +18,6 @@ helmCharts:
       - --kubelet-use-node-status-port
       - --kubelet-insecure-tls
       - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-      - --metric-resolution=30s
+      - --metric-resolution=60s
       - --secure-port=4443
-      - --permit-port-sharing
+      #- --permit-port-sharing
