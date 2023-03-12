@@ -5,6 +5,7 @@ resources:
 - backstage-secrets-sealed.yaml
 - postgres-secrets-sealed.yaml
 - postgres-config.yaml
+- backstage-integration-sealed-secret.yaml
 - ../../base
 helmCharts:
 - name: analect-app
@@ -30,6 +31,8 @@ helmCharts:
           name: postgres-secrets
       - secretRef:
           name: backstage-secrets
+      - secretRef:
+          name: backstage-integration-config
     resources:
       requests:
         memory: 256Mi
