@@ -32,7 +32,7 @@ helmCharts:
       - secretRef:
           name: backstage-secrets
       - secretRef:
-          name: backstage-integration-config
+          name: backstage-integration-creds
     resources:
       requests:
         memory: 256Mi
