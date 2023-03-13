@@ -5,7 +5,7 @@ resources:
 - backstage-secrets-sealed.yaml
 - postgres-secrets-sealed.yaml
 - postgres-config.yaml
-- backstage-integration-sealed-secret.yaml
+- backstage-integration-creds-sealed.yaml
 - ../../base
 helmCharts:
 - name: analect-app
