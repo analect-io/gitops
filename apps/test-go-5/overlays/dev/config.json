@@ -1,0 +1,11 @@
+{
+  "appName": "test-go-5",
+  "userGivenName": "test-go-5",
+  "destNamespace": "test-go-5",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/test-go-5/overlays/dev",
+  "srcRepoURL": "https://github.com/analect-io/gitops.git",
+  "srcTargetRevision": "",
+  "CreateNamespace": true,
+  "labels": null
+}
