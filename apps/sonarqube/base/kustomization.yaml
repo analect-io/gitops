@@ -15,7 +15,7 @@ helmCharts:
       sonarqubeEmail: info@analect.com
       sonarqubeUsername: admin
       existingSecret: sonarqube-postgresql-secret
-      replicaCount: 0
+      replicaCount: 1
       minHeapSize: 512m
       maxHeapSize: 1024m
       resources:
