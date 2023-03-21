@@ -20,8 +20,8 @@ helmCharts:
       maxHeapSize: 1024m
       resources:
         requests:
-          memory: 500Mi
-          cpu: 100m
+          memory: 1024Mi
+          cpu: 200m
         limits:
           memory: 1024Mi
           cpu: 200m
