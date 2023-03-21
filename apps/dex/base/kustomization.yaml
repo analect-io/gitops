@@ -1,6 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: dex
+resources:
+  - ns.yaml
+  - auth-policy.yaml
 helmCharts:
 - name: dex
   releaseName: dex
@@ -25,6 +28,11 @@ helmCharts:
         secretKeyRef:
           name: github-client
           key: kiali-secret
+    - name: DEX_K8S_AUTH_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: github-client
+          key: DEX_K8S_AUTH_SECRET
     config:
       issuer: https://dex.analect.com
       storage:
@@ -48,28 +56,35 @@ helmCharts:
           loadAllGroups: false
           teamNameField: slug
           useLoginAsID: false
+      oauth2:
+        skipApprovalScreen: true
       staticClients:
       - id: example-app
         redirectURIs:
         - 'http://127.0.0.1:5555/callback'
         name: 'Example App'
         secret: ZXhhbXBsZS1hcHAtc2VjcmV0
+
       - id: kiali-client
         name: 'Kiali'
         redirectURIs:
         - 'https://kiali.analect.com/kiali'
         SecretEnv: KIALI_CLIENT_SECRET
+
       - id: dex-k8s-authenticator
         name: dex-k8s-authenticator
-        secret: 6sn6i0DXn0ANG4b0nycOnrvbtFi3UQqZxmx
+        SecretEnv: DEX_K8S_AUTH_SECRET
         redirectURIs:
-        - https://kubelogin.analect.com/callback/
+        - https://kube-login.analect.com/callback/
 
 - name: dex-k8s-authenticator
   releaseName: dex-k8s-authenticator
   version: 0.0.2
   repo: https://charts.sagikazarmark.dev
   valuesInline:
+    envFrom:
+    - secretRef:
+        name: github-client
     config:
       web_path_prefix: /
       debug: true
@@ -77,11 +92,11 @@ helmCharts:
         - name: civo.cluster
           short_description: "Cluster Civo - civo.cluster"
           description: "Cluster civo.cluster"
-          client_secret: 6sn6i0DXn0ANG4b0nycOnrvbtFi3UQqZxmx
+          client_secret: ${DEX_K8S_AUTH_SECRET}
           issuer: https://dex.analect.com
           k8s_master_uri: https://74.220.21.13:6443
           client_id: dex-k8s-authenticator
-          redirect_uri: https://kubelogin.analect.com/callback/
+          redirect_uri: https://kube-login.analect.com/callback/
           k8s_ca_pem: |
             -----BEGIN CERTIFICATE-----
             MIIC/jCCAeagAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl

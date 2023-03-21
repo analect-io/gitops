@@ -2,50 +2,66 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: kiali-operator
 resources:
-  - auth-policy.yaml
   - ns.yaml
+  - auth-policy.yaml
 helmCharts:
-- name: kiali-operator
-  includeCRDs: true
-  releaseName: kiali-operator
-  version: 1.64.0
-  repo: https://kiali.org/helm-charts
-  valuesInline:
-    clusterRoleCreator: true
-    cr:
-      create: true
-      namespace: istio-system
-      spec:
-        istio_namespace: "istio-system"
-        deployment:
-          accessible_namespaces:
-          - '**'
-          view_only_mode: true
-        external_services:
-          prometheus:
-            url: http://prometheus-server.monitoring
-          grafana:
-            auth:
-              type: bearer
-              token: secret:kiali-secrets:grafanaToken
-            enabled: true
-            in_cluster_url: http://grafana.monitoring
-            url: https://grafana.analect.com
-          tracing:
-            enabled: true
-            in_cluster_url: 'http://tracing.istio-system/jaeger'
-            use_grpc: false
-            # Public facing URL of Jaeger
-            url: 'https://jaeger.analect.com/jaeger'
-        auth:
-          strategy: openid
-          openid:
-            client_id: kiali-client
-            password: secret:kiali:oidc-secret
-            issuer_uri: https://dex.analect.com
-            username_claim: preferred_username
-            disable_rbac: true
-            scopes:
-            - "openid"
-            - "profile"
-            - "email"
+  - name: kiali-operator
+    includeCRDs: true
+    releaseName: kiali-operator
+    version: 1.64.0
+    repo: https://kiali.org/helm-charts
+    valuesInline:
+      clusterRoleCreator: true
+      cr:
+        create: true
+        namespace: istio-system
+        spec:
+          istio_namespace: "istio-system"
+          deployment:
+            accessible_namespaces:
+              - '**'
+            view_only_mode: true
+            # disable_rbac: true
+          external_services:
+            istio:
+              component_status:
+                components:
+                  - app_label: "istiod"
+                    is_core: true
+                    is_proxy: false
+                  - app_label: istio-ingressgateway
+                    is_core: true
+                    is_proxy: true
+                    # default: namespace is undefined
+                    namespace: istio-system
+                enabled: true
+              config_map_name: "istio"
+              envoy_admin_local_port: 15000
+              gateway_api_class_name: ""
+            prometheus:
+              url: http://prometheus-server.monitoring
+            grafana:
+              auth:
+                type: bearer
+                token: secret:kiali-secrets:grafanaToken
+              enabled: true
+              in_cluster_url: http://grafana.monitoring
+              url: https://grafana.analect.com
+            # tracing:
+            #   enabled: true
+            #   in_cluster_url: 'http://tracing.istio-system/jaeger'
+            #   use_grpc: false
+            #   # Public facing URL of Jaeger
+            #   url: 'https://jaeger.diegoluisi.eti.br/jaeger'
+          auth:
+            strategy: openid
+            openid:
+              client_id: kiali-client
+              password: secret:kiali:oidc-secret
+              issuer_uri: https://dex.analect.com
+              username_claim: preferred_username
+              disable_rbac: true
+              scopes:
+                - "openid"
+                - "profile"
+                - "email"

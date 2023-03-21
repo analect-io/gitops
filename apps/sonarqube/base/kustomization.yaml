@@ -4,41 +4,40 @@ namespace: sonarqube
 resources:
   - ns.yaml
 helmCharts:
-- name: sonarqube
-  releaseName: sonarqube
-  version: 2.0.9
-  repo: https://charts.bitnami.com/bitnami
-  valuesInline:
-    commonLabels:
-      app: sonarqube
-      version: 9.7.1
-    sonarqubeEmail: info@analect.com
-    sonarqubeUsername: admin
-    existingSecret: sonarqube-postgresql-secret
-    minHeapSize: 512m
-    maxHeapSize: 1024m
-    # resources:
-    #   requests:
-    #     memory: 1024Mi
-    #     cpu: 100m
-    #   limits:
-    #     memory: 2048Mi
-    #     cpu: 200m
-    service:
-      type: ClusterIP
-    postgresql:
-      auth:
-        existingSecret: sonarqube-postgresql-secret
-      primary:
-        resources:
-          limits:
-            cpu: 100m
-            memory: 256Mi
-          requests:
-            cpu: 50m
-            memory: 128Mi
-    # metrics:
-    #   jmx:
-    #     enabled: true
-
-
+  - name: sonarqube
+    releaseName: sonarqube
+    version: 2.1.4
+    repo: https://charts.bitnami.com/bitnami
+    valuesInline:
+      commonLabels:
+        app: sonarqube
+        version: 9.9.0
+      sonarqubeEmail: info@analect.com
+      sonarqubeUsername: admin
+      existingSecret: sonarqube-postgresql-secret
+      replicaCount: 1
+      minHeapSize: 512m
+      maxHeapSize: 1024m
+      resources:
+        requests:
+          memory: 500Mi
+          cpu: 100m
+        limits:
+          memory: 1024Mi
+          cpu: 200m
+      service:
+        type: ClusterIP
+      postgresql:
+        auth:
+          existingSecret: sonarqube-postgresql-secret
+        primary:
+          resources:
+            limits:
+              cpu: 100m
+              memory: 256Mi
+            requests:
+              cpu: 50m
+              memory: 128Mi
+      # metrics:
+      #   jmx:
+      #     enabled: true

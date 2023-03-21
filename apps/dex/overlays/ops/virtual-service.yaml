@@ -27,7 +27,7 @@ metadata:
   namespace: dex
 spec:
   hosts:
-  - "kubelogin.analect.com"
+  - "kube-login.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
   http:

@@ -1,5 +1,6 @@
 ---
 name: main
+
 on:
   push:
     branches: [ main ]
@@ -10,11 +11,65 @@ env:
   DATREE_TOKEN: ${{ secrets.DATREE_TOKEN }}
 
 jobs:
+  env:
+    uses: devxp-tech/.github/.github/workflows/env.yaml@main
+
+  yaml-linter:
+    name: Yaml Linter 🧹
+    runs-on: ubuntu-latest
+    needs:
+      - env
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      - name: Yaml Lint
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          no_warnings: true
+
+  kube-linter:
+    name: Kube Linter 🧹
+    runs-on: ubuntu-latest
+    needs:
+      - env
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      - name: Scan repo
+        id: kube-lint-repo
+        uses: stackrox/kube-linter-action@v1.0.4
+        with:
+          directory: apps
+          format: sarif
+          output-file: kube-linter.sarif
+        continue-on-error: true
+      - name: Upload SARIF report files to GitHub
+        uses: github/codeql-action/upload-sarif@v1
+
+  secret-find:
+    name: Secrets Find 🔍
+    runs-on: ubuntu-latest
+    needs:
+      - env
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      - name: Find Secrets 🔍
+        shell: bash
+        run: |
+          if find apps/ -name '*.yaml' | xargs grep -q "kind: Secret"; then
+              echo "Fail, secret found! :("
+              exit 1
+          else
+              echo "Success, secret not found! :)"
+              exit 0
+          fi
 
   datree-check:
     name: Datree Check 🔒
     runs-on: ubuntu-latest
-    if: always()
+    needs:
+      - env
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -26,9 +81,8 @@ jobs:
 
   trivy-scan:
     name: Trivy Vulnerability Scanner 🔒
-    if: always()
     needs:
-      - datree-check
+      - env
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code 🛎️
@@ -51,55 +105,26 @@ jobs:
         with:
           sarif_file: 'trivy-results.sarif'
 
-  sonarqube:
-    name: SonarQube Scan 🔍
-    if: always()
-    runs-on: ubuntu-latest
+  quality-gate:
+    uses: devxp-tech/.github/.github/workflows/sonarqube.yaml@main
+    secrets: inherit
     needs:
+      - env
+      - yaml-linter
+      - kube-linter
+      - secret-find
       - datree-check
       - trivy-scan
-    steps:
-    - uses: actions/checkout@master
-    - name: SonarQube Scan 🔍
-      uses: kitabisa/sonarqube-action@v1.2.0
-      with:
-        host: ${{ secrets.SONARQUBE_HOST }}
-        login: ${{ secrets.SONARQUBE_TOKEN }}
 
-  # kube-linter:
-  #   name: Kube Linter
-  #   if: always()
-  #   needs:
-  #     - policy-check
-  #     - security-scan
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Scan repo
-  #       id: kube-lint-repo
-  #       uses: stackrox/kube-linter-action@v1.0.4
-  #       with:
-  #         directory: apps
-
-  slack-workflow-status:
-    name: Post Workflow Status To Slack 📣
+  notify:
+    uses: devxp-tech/.github/.github/workflows/notify.yaml@main
     if: always()
+    secrets: inherit
     needs:
+      - env
+      - yaml-linter
+      - kube-linter
+      - secret-find
       - datree-check
-      - sonarqube
+      - quality-gate
       - trivy-scan
-      # - kube-linter
-    runs-on: ubuntu-latest
-    steps:
-      - name: Slack Workflow Notification 📣
-        uses: Gamesight/slack-workflow-status@master
-        with:
-          # Required Input
-          repo_token: ${{secrets.ACCESS_TOKEN_GITHUB}}
-          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK }}
-          # Optional Input
-          channel: 'github-notifications'
-          name: 'github-notifications'
-          # icon_emoji: ':poop:'
-          icon_url: ${{ secrets.SLACK_ICON }}
-

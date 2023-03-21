@@ -1,26 +1,27 @@
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
-  name: dex-policy
-  namespace: dex
+  name: prometheus-policy
+  namespace: monitoring
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/instance: dex-k8s-authenticator
+      app: prometheus
   action: ALLOW
   rules:
     - when:
         - key: request.headers[x-envoy-external-address]
           values:
             - "94.62.74.120" # Diego
-            - "177.76.170.30" # Gritzko
-            - "179.191.119.178" #DiOculos
       to:
         - operation:
             methods: ["GET", "POST", "OPTIONS", "DELETE", "PATCH"]
     - from:
       - source:
-          namespaces: ["dex", "monitoring"]
+          namespaces:
+          - backstage
+          - monitoring
+          - kiali-operator
       to:
       - operation:
           methods: ["GET", "POST", "OPTIONS", "DELETE", "PATCH"]

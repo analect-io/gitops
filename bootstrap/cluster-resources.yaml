@@ -42,6 +42,8 @@ spec:
       source:
         path: bootstrap/cluster-resources/{{name}}
         repoURL: https://github.com/analect-io/gitops.git
+        directory:
+          recurse: true
       syncPolicy:
         automated:
           allowEmpty: true
