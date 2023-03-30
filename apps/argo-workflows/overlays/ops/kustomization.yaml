@@ -64,7 +64,7 @@ patches:
         - profile
         rbac:
           enabled: true
-      containerRuntimeExecutor: emissary          
+#      containerRuntimeExecutor: emissary          
 # patchesStrategicMerge:
 #   - |
 #     apiVersion: v1
