@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Namespace
 metadata:
   labels:
-    kubernetes.io/metadata.name: argo
-    backstage.io/kubernetes-id: argo
+    kubernetes.io/metadata.name: argo-workflows
+    backstage.io/kubernetes-id: workflows
     istio-injection: enabled
   name: argo
 spec:
