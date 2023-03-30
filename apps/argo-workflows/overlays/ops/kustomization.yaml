@@ -38,7 +38,7 @@ patches:
           database: postgres
           host: postgres
           port: 5432
-          ssl: true
+          ssl: false
           sslMode: require
           passwordSecret:
             key: password
