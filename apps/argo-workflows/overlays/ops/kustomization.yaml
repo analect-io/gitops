@@ -6,6 +6,7 @@ resources:
 - artifact-secrets.yaml
 - argowf-dex-argocd-sso-secrets-sealed.yaml
 - argo-postgres-sealed-secrets.yaml
+- virtual-service.yaml
 # - ../workflows
 
 patches:
