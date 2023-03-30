@@ -53,10 +53,10 @@ patches:
         sessionExpiry: 240h
         clientId:
           name: argo-workflows-sso
-          key: clientID
+          key: client-id
         clientSecret:
           name: argo-workflows-sso
-          key: clientSecret
+          key: client-secret
         redirectUrl: https://workflows.analect.com/oauth2/callback
         scopes:
         - groups
