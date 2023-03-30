@@ -25,7 +25,7 @@ patches:
             key: SecretAccessKey
             name: argo-workflows-artifacts
           bucket: analect-gitops/argo-workflows
-          keyFormat: "{{workflow.uid}}/{{pod.name}}"
+#          keyFormat: "{{workflow.uid}}/{{pod.name}}"
           endpoint: s3.amazonaws.com
           region: eu-west-1
       metricsConfig:
