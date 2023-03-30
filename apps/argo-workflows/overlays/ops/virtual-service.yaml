@@ -3,8 +3,6 @@ kind: VirtualService
 metadata:
   name: argo-workflows
   namespace: argo
-  labels:
-    app: argo-workflows
 spec:
   hosts:
   - "workflows.analect.com"
