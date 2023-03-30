@@ -1,0 +1,85 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+- artifact-secrets.yaml
+- argowf-dex-argocd-sso-secrets-sealed.yaml
+- argo-postgres-sealed-secrets.yaml
+# - ../workflows
+
+patches:
+- patch: |-
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: workflow-controller-configmap
+    data:
+      config: |
+        artifactRepository:
+          archiveLogs: true
+          s3:
+            accessKeySecret:
+              key: AccessKeyId
+              name: argo-workflows-artifacts
+            secretKeySecret:
+              key: SecretAccessKey
+              name: argo-workflows-artifacts
+            bucket: analect-gitops/argo-workflows
+            keyFormat: "{{workflow.uid}}/{{pod.name}}"
+            endpoint: s3.amazonaws.com
+            region: eu-west-1
+        metricsConfig:
+          enabled: true
+          path: /metrics
+          port: 8080
+        persistence:
+          archive: true
+          skipMigration: false
+          postgresql:
+            database: postgres
+            host: postgres
+            port: 5432
+            ssl: true
+            sslMode: require
+            passwordSecret:
+              key: password
+              name: argo-postgres-config
+            tableName: argo_workflows
+            userNameSecret:
+              key: username
+              name: argo-postgres-config
+        sso:
+          issuer: https://argocd.analect.com/api/dex
+          issuerAlias: https://argocd.analect.com/api/dex
+          sessionExpiry: 240h
+          clientId:
+            name: argo-workflows-sso
+            key: clientID
+          clientSecret:
+            name: argo-workflows-sso
+            key: clientSecret
+          redirectUrl: https://workflows.analect.com/oauth2/callback
+          scopes:
+          - groups
+          - email
+          - profile
+          rbac:
+            enabled: true      
+# patchesStrategicMerge:
+#   - |
+#     apiVersion: v1
+#     kind: ServiceAccount
+#     metadata:
+#       name: argo-server
+#       annotations:
+#         <endpoint>/role-arn: <role-arn>  # must be identical to annotation of the service account in rbac.yaml file
+#   - |
+#     apiVersion: v1
+#     kind: ConfigMap
+#     metadata:
+#       name: workflow-controller-configmap
+#     data:
+#       workflowDefaults: |
+#         spec:
+#           serviceAccountName: <service-account-name> # must be identical to the service account name in rbac.yaml       
