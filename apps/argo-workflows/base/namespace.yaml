@@ -1,4 +1,11 @@
 apiVersion: v1
 kind: Namespace
 metadata:
+  labels:
+    kubernetes.io/metadata.name: argo
+    backstage.io/kubernetes-id: argo
+    istio-injection: enabled
   name: argo
+spec:
+  finalizers:
+  - kubernetes  
