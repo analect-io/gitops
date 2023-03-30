@@ -8,6 +8,8 @@ resources:
   - argocd-notifications-secret-sealed.yaml
   - github-secrets-sealed.yaml
   - sso-sealed.yaml
+  # this is used for argo-workflows to use dex within argocd for authentication
+  - argowf-dex-argocd-sso-secrets-sealed.yaml
   - virtual-service.yaml
 patchesStrategicMerge:
   - argocd-server.yaml
@@ -20,7 +22,7 @@ patches:
       metadata:
         name: argocd-notifications-secret
         annotations:
-          sealedsecrets.bitnami.com/managed: "true"
+          sealedsecrets.bitnami.com/managed: "true"      
 configMapGenerator:
   - behavior: merge
     options:
