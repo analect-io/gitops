@@ -15,7 +15,7 @@ patches:
     metadata:
       name: workflow-controller-configmap
     data:
-      artifactRepository:
+      artifactRepository: |
         archiveLogs: true
         s3:
           accessKeySecret:
@@ -27,11 +27,11 @@ patches:
           bucket: analect-gitops/argo-workflows
           endpoint: s3.amazonaws.com
           region: eu-west-1
-      metricsConfig:
+      metricsConfig: |
         enabled: true
         path: /metrics
         port: 8080
-      persistence:
+      persistence: |
         archive: true
         skipMigration: false
         postgresql:
@@ -47,7 +47,7 @@ patches:
           userNameSecret:
             key: username
             name: argo-postgres-config
-      sso:
+      sso: |
         issuer: https://argocd.analect.com/api/dex
         issuerAlias: https://argocd.analect.com/api/dex
         sessionExpiry: 240h
