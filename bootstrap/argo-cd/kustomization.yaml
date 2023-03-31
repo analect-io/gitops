@@ -14,6 +14,7 @@ resources:
 patchesStrategicMerge:
   - argocd-server.yaml
   - argocd-notifications-cm.yaml
+  - argocd-dex-server.yaml
 patches:
   - patch: |-
       apiVersion: v1
