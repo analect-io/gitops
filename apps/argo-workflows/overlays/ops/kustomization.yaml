@@ -49,7 +49,6 @@ patches:
             key: username
             name: argo-postgres-config
       sso: |
-        insecureSkipVerify: true
         issuer: https://argocd.analect.com/api/dex
         issuerAlias: https://argocd.analect.com/api/dex
         sessionExpiry: 240h
