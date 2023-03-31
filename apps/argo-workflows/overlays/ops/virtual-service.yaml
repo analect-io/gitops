@@ -9,9 +9,10 @@ spec:
   gateways:
   - istio-system/istio-ingressgateway
   http:
-  - match:
-    - uri:
-        regex: /.*
+  - headers:
+      request:
+        set:
+          X-Forwarded-Port: "443"
     route:
     - destination:
         host: argo-server.argo.svc.cluster.local
