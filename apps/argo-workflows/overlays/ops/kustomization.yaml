@@ -64,7 +64,7 @@ patches:
         - email
         - profile
         rbac:
-          enabled: true
+          enabled: false
 #      containerRuntimeExecutor: emissary          
 # patchesStrategicMerge:
 #   - |
