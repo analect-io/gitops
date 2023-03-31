@@ -59,7 +59,7 @@ patches:
         clientSecret:
           name: argo-workflows-sso
           key: client-secret
-        redirectUrl: https://workflows.analect.com/oauth2/callback
+#        redirectUrl: https://workflows.analect.com/oauth2/callback
         scopes:
         - groups
         - email
