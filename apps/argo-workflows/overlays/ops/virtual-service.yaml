@@ -17,3 +17,4 @@ spec:
         host: argo-server.argo.svc.cluster.local
         port:
           number: 2746
+    timeout: 10s
