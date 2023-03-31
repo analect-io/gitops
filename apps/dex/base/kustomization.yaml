@@ -53,7 +53,7 @@ helmCharts:
           # Credentials can be string literals or pulled from the environment.
           clientID: $GITHUB_CLIENT_ID
           clientSecret: $GITHUB_CLIENT_SECRET
-          redirectURI: https://dex.analect.com/callback
+          redirectURI: https://argocd.analect.com/api/dex/callback
           orgs:
           - name: analect-io
             teams:
