@@ -49,8 +49,8 @@ patches:
             key: username
             name: argo-postgres-config
       sso: |
-        issuer: https://argocd.analect.com/api/dex
-        issuerAlias: https://argocd.analect.com/api/dex
+        issuer: https://dex.analect.com
+        issuerAlias: https://dex.analect.com
         sessionExpiry: 240h
         clientId:
           name: argo-workflows-sso
@@ -64,7 +64,7 @@ patches:
         - email
         - profile
         rbac:
-          enabled: false
+          enabled: true
 #      containerRuntimeExecutor: emissary          
 # patchesStrategicMerge:
 #   - |
