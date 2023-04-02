@@ -33,6 +33,11 @@ helmCharts:
         secretKeyRef:
           name: github-client
           key: DEX_K8S_AUTH_SECRET
+    - name: K8S_URL
+      valueFrom:
+        secretKeyRef:
+          name: github-client
+          key: K8S_URL      
     - name: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
       valueFrom:
         secretKeyRef:
@@ -104,21 +109,12 @@ helmCharts:
           redirect_uri: https://kube-login.analect.com/callback/
           k8s_ca_pem: |
             -----BEGIN CERTIFICATE-----
-            MIIC/jCCAeagAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl
-            cm5ldGVzMB4XDTIxMTAyNjEzMTczNFoXDTMxMTAyNDEzMTczNFowFTETMBEGA1UE
-            AxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALog
-            NwuCt3aKyVVCwAAfA1GAoujuT7RmLFbVeHV9O73NVWbT++Gyi/Ayv4PDa2oWLS6g
-            Lj7fyb9Smdw1LKm4L/Qk8kabxSFIPEPzp9cD+fWbFfwRx/e7wyNlKKwcTlMPuXGF
-            pVY+NU+tP30lHvthxymwgbpmiOQ/gCEWLtM9/bgiU57wnkWuwCObyWtHJLkrkwhR
-            tV9Qb4BbZ9SGETcu2r9ehR2ATwSR1msEZRsXMmtV6Sy+zzrePG9P9NFh0+e/kpdg
-            UO8FljRB/PnFvMg4eu+eFoBoaPE7iRuLjbNjIVLhRtsTJ7SHyAdXxi5C1WLBr6T6
-            vWcWyHkKb9+aHMgEHesCAwEAAaNZMFcwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB
-            /wQFMAMBAf8wHQYDVR0OBBYEFPynsEMQYphs1KsVi7Mph10SnUrjMBUGA1UdEQQO
-            MAyCCmt1YmVybmV0ZXMwDQYJKoZIhvcNAQELBQADggEBAJsNPmJwxBwEOe40O1LQ
-            herYNU4T06Qm5j4D0Nqx8AHhRWOub0zJl5Hx4Ph5tMLhlVo6c77X2H5RNGgHMxpJ
-            SPUIinpoiR8BceDBzGPVI6mmqYc9MOVThGy+/uhf+140DldE3gG2vsdVjqbLlmXb
-            MsbZEQhMTJrlA69QEs+EJC7Dihmevorc51UUf5hB0oN+GkCOs7z5jljjjotoGuCN
-            YngJnm6SCbWwhhGfmhPIAVzGh9bBDmb/G3bEWLZ6pyHBJonRgWxlh/I200po7apP
-            /JIOuCA89l4gG2v92O4iYS+wmmDSaPxNQQpeFU8ZaZRrnVnO1l/MFWPgQ4cvURoQ
-            Bxo=
+            MIIBdzCCAR2gAwIBAgIBADAKBggqhkjOPQQDAjAjMSEwHwYDVQQDDBhrM3Mtc2Vy
+            dmVyLWNhQDE2Nzc0MTMwODkwHhcNMjMwMjI2MTIwNDQ5WhcNMzMwMjIzMTIwNDQ5
+            WjAjMSEwHwYDVQQDDBhrM3Mtc2VydmVyLWNhQDE2Nzc0MTMwODkwWTATBgcqhkjO
+            PQIBBggqhkjOPQMBBwNCAATdIhkrNt5/jBjE0cLeznOPVneOVd9oM74R7cWyraWU
+            +WfwLSkJc7GlszgEdTXc5o1ypF6oSEvp81cgExfs6PrRo0IwQDAOBgNVHQ8BAf8E
+            BAMCAqQwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUamyR0MvaTAoJVR7du++s
+            B0sy8AcwCgYIKoZIzj0EAwIDSAAwRQIhAJmvYIjKr3ReDokCUD9EGdseAD/H+2lV
+            Bw8Sqva3wzn8AiB4HDSDbIp2Clv9p6oPY2kn669uB4E3N3497Wcqc2L5EQ==
             -----END CERTIFICATE-----
