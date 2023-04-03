@@ -11,20 +11,14 @@ helmCharts:
   repo: https://analect-io.github.io/helm-charts
   valuesInline:
     name: teste-loki
+    image:
+      repository: ghcr.io/analect-io/teste-loki
+      tag: 20cf9503
     envFrom:
     - secretRef:
         name: postgres-secrets
-    image:
-      repository: ghcr.io/analect-io/teste-loki
-      tag: 0e43448a
     network:
       domain: analect.com
-    ResourceQuota:
-      enabled: false
-    migration:
-      enabled: false
-    PeerAuthentication:
-      enabled: true
     autoscaling:
       enabled: true
       minReplicas: 1
