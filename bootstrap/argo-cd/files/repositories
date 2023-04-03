@@ -6,6 +6,6 @@
 - name: grafana
   type: helm
   url: https://grafana.github.io/helm-charts
-- name: analect
+- name: analect-io
   type: helm
   url: https://analect-io.github.io/helm-charts
