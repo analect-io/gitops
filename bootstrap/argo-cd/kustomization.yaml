@@ -9,12 +9,12 @@ resources:
   - github-secrets-sealed.yaml
   - sso-sealed.yaml
   # this is used for argo-workflows to use dex within argocd for authentication
-  - argowf-dex-argocd-sso-secrets-sealed.yaml
+  #- argowf-dex-argocd-sso-secrets-sealed.yaml
   - virtual-service.yaml
 patchesStrategicMerge:
   - argocd-server.yaml
   - argocd-notifications-cm.yaml
-  - argocd-dex-server.yaml
+  #- argocd-dex-server.yaml
 patches:
   - patch: |-
       apiVersion: v1
@@ -36,7 +36,7 @@ configMapGenerator:
       - files/resource.customizations
       # - files/resource.exclusions
     literals:
-      - admin.enabled=false
+      - admin.enabled=true
       - kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone"
       - statusbadge.enabled=true
       - url=https://argocd.analect.com

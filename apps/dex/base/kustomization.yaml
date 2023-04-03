@@ -68,12 +68,12 @@ helmCharts:
           useLoginAsID: false
       oauth2:
         skipApprovalScreen: true
-      staticClients:
-      - id: argo-workflows-sso
-        name: Argo Workflow
-        redirectURIs:
-        - https://workflows.analect.com/oauth2/callback
-        secretEnv: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
+      # staticClients:
+      # - id: argo-workflows-sso
+      #   name: Argo Workflow
+      #   redirectURIs:
+      #   - https://workflows.analect.com/oauth2/callback
+      #   secretEnv: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
 
       - id: kiali-client
         name: 'Kiali'
