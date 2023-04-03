@@ -4,7 +4,7 @@ metadata:
   name: sonarqube
   namespace: sonarqube
   annotations:
-    link.argocd.argoproj.io/external-link: https://sonar.diegoluisi.eti.br
+    link.argocd.argoproj.io/external-link: https://sonar.analect.com
 spec:
   hosts:
   - "sonar.analect.com"

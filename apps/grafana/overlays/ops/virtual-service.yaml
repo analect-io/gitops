@@ -5,7 +5,7 @@ metadata:
   name: grafana
   namespace: monitoring
   annotations:
-    link.argocd.argoproj.io/external-link: https://grafana.diegoluisi.eti.br
+    link.argocd.argoproj.io/external-link: https://grafana.analect.com
 spec:
   hosts:
   - "grafana.analect.com"
