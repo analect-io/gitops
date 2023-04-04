@@ -104,7 +104,7 @@ helmCharts:
           description: "Cluster civo.cluster"
           client_secret: ${DEX_K8S_AUTH_SECRET}
           issuer: https://dex.analect.com
-          k8s_master_uri: ${K8S_URL}
+          k8s_master_uri: https://1e72b3f6-0abb-441a-9779-7b438d53fd07.k8s.civo.com:6443
           client_id: dex-k8s-authenticator
           redirect_uri: https://kube-login.analect.com/callback/
           k8s_ca_pem: |
