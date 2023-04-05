@@ -10,9 +10,10 @@ spec:
   gateways:
   - istio-system/istio-ingressgateway
   http:
-  - match:
-    - uri:
-        prefix: /
+  - headers:
+      request:
+        set:
+          X-Forwarded-Port: "443"
     route:
     - destination:
         port:
