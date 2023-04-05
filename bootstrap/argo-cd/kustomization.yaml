@@ -51,6 +51,13 @@ configMapGenerator:
     - policy.default="role:readonly"
     files:
       - files/policy.csv
+  - behavior: merge
+    name: argocd-cmd-params-cm
+    options:
+        labels:
+          app.kubernetes.io/part-of: argocd
+    literals:
+    - server.dex.server="false"
 components:
 # extensions controller component
 - https://github.com/argoproj-labs/argocd-extensions/manifests
