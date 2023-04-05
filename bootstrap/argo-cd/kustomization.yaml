@@ -48,7 +48,7 @@ configMapGenerator:
         labels:
           app.kubernetes.io/part-of: argocd
     literals:
-    - policy.default="role:readonly"
+    - policy.default="role:org-admin"
     files:
       - files/policy.csv
 components:
