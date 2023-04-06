@@ -31,7 +31,7 @@ configMapGenerator:
       labels:
         app.kubernetes.io/part-of: argocd
     files:
-      - files/dex.config
+      - files/oicd.config
       - files/repositories
       - files/repository.credentials
       - files/resource.customizations
