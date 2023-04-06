@@ -45,6 +45,13 @@ configMapGenerator:
       - accounts.backstage="apiKey, login"
     name: argocd-cm
   - behavior: merge
+    name: argocd-cmd-params-cm
+    options:
+        labels:
+          app.kubernetes.io/part-of: argocd
+    literals:
+    - dex.server="https://dex.analect.com"  
+  - behavior: merge
     name: argocd-rbac-cm
     options:
         labels:
