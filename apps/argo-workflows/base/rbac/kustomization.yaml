@@ -8,3 +8,6 @@ resources:
   - workflow-role.yaml
   - workflow-rolebinding.yaml
   - workflow-serviceaccount.yaml
+  - argo-server-sa-sre-team.yaml
+  - sre-team-role.yaml
+  - sre-team-rolebinding.yaml
