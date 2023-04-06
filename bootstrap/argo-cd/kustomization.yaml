@@ -8,6 +8,7 @@ resources:
   - argocd-notifications-secret-sealed.yaml
   - github-secrets-sealed.yaml
   - sso-sealed.yaml
+  - argocd-sso-sealed.yaml
   # this is used for argo-workflows to use dex within argocd for authentication
   #- argowf-dex-argocd-sso-secrets-sealed.yaml
   - virtual-service.yaml
