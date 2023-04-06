@@ -50,7 +50,7 @@ configMapGenerator:
         labels:
           app.kubernetes.io/part-of: argocd
     literals:
-    - dex.server="https://dex.analect.com"  
+    - server.dex.server="https://dex.analect.com"  
   - behavior: merge
     name: argocd-rbac-cm
     options:
