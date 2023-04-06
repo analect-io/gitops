@@ -51,7 +51,6 @@ patches:
       sso: |
         issuer: https://dex.analect.com
         issuerAlias: https://dex.analect.com
-        sessionExpiry: 240h
         clientId:
           name: argo-workflows-sso
           key: client-id
