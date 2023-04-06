@@ -42,11 +42,18 @@ helmCharts:
       valueFrom:
         secretKeyRef:
           name: github-client
-          key: ARGO_WORKFLOWS_SSO_CLIENT_SECRET      
+          key: ARGO_WORKFLOWS_SSO_CLIENT_SECRET
+    - name: ARGOCD_CLIENT_SECRET
+      valueFrom:
+        secretKeyRef:
+          name: github-client
+          key: ARGOCD_CLIENT_SECRET            
     config:
       issuer: https://dex.analect.com
       storage:
-        type: memory
+        type: kubernetes
+        config:
+          inCluster: true
       # enablePasswordDB: true
       connectors:
       - type: github
@@ -66,9 +73,17 @@ helmCharts:
           loadAllGroups: false
           teamNameField: slug
           useLoginAsID: false
+      
       oauth2:
         skipApprovalScreen: true
+      
       staticClients:
+      - id: argocd-sso
+        name: Argo CD
+        redirectURIs:
+        - https://argocd.analect.com/auth/callback
+        secretEnv: ARGOCD_CLIENT_SECRET
+      
       - id: argo-workflows-sso
         name: Argo Workflow
         redirectURIs:
