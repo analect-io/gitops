@@ -13,6 +13,9 @@
   value:
     --secure=false        
 - op: add
+  path: /spec/template/spec/containers/0/readinessProbe/httpGet/scheme
+  value: HTTP
+- op: add
   path: /spec/template/spec/serviceAccountName
   value: argo-server
 - op: replace
