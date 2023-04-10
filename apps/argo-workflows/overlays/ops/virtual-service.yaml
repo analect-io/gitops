@@ -8,7 +8,7 @@ spec:
   - "workflows.analect.com"
   gateways:
   - istio-system/istio-ingressgateway
-  web:
+  http:
   - match:
     - sniHosts:
         - "workflows.analect.com"
