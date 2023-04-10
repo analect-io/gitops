@@ -30,4 +30,13 @@ rules:
       - workflows
     verbs:
       - create
-      - get    
+      - get
+  # from https://argoproj.github.io/argo-workflows/argo-server-sso/
+  - apiGroups:
+      - ""
+    resources:
+      - serviceaccounts
+    verbs:
+      - get
+      - list
+      - watch        
