@@ -10,8 +10,8 @@ spec:
   - istio-system/istio-ingressgateway
   http:
   - match:
-    - uri:
-        prefix: /
+    - sniHosts:
+        - "workflows.analect.com"
     route:
     - destination:
         host: argo-server.argo.svc.cluster.local
