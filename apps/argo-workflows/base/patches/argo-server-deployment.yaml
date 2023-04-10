@@ -1,6 +1,6 @@
 # seems multi auth modes are possible https://github.com/argoproj/argo-workflows/blob/master/docs/argo-server-auth-mode.md
 # this --auth-mode=sso is used for integration with argocd dex
-- op: add
+- op: replace
   path: /spec/template/spec/containers/0/args/-
   value:
     --auth-mode=sso
