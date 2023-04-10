@@ -7,9 +7,8 @@
     --auth-mode=client
     --x-frame-options=SAMEORIGIN
 - op: add
-  path: /spec/template/spec/-
-  value:
-    {"serviceAccountName": "argo-server"}
+  path: /spec/template/spec/serviceAccountName
+  value: argo-server
 - op: replace
   path: /spec/replicas
   value: 1
@@ -18,10 +17,8 @@
   value:
     { "requests": { "cpu": "0.1", "memory": "300Mi"}, "limits": { "cpu": "1", "memory": "500Mi"} }
 - op: add
-  path: /spec/selector/matchLabels/-
-  value:
-    {"app": "argo-server"}
+  path: /spec/selector/matchLabels/app
+  value: argo-server
 - op: add
-  path: /spec/template/metadata/labels/-
-  value:
-    {"app": "argo-server"}
+  path: /spec/template/metadata/labels/app
+  value: argo-server
