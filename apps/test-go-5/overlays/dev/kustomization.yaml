@@ -6,7 +6,7 @@ helmCharts:
 - name: analect-app
   releaseName: analect-app
   version: 0.1.72
-  repo: https://analect-io/.github.io/helm-charts
+  repo: https://analect-io.github.io/helm-charts
   valuesInline:
     name: test-go-5
     image:

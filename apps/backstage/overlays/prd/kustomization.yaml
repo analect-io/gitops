@@ -11,7 +11,7 @@ helmCharts:
 - name: analect-app
   releaseName: analect-app
   version: 0.1.74
-  repo: https://analect-io/.github.io/helm-charts
+  repo: https://analect-io.github.io/helm-charts
   valuesInline:
     name: "backstage"
     image:
@@ -67,7 +67,7 @@ helmCharts:
 - name: analect-infra
   releaseName: analect-infra
   version: 0.0.3
-  repo: https://analect-io/.github.io/helm-charts
+  repo: https://analect-io.github.io/helm-charts
   valuesInline:
     name: "backstage"
     Bucket:
