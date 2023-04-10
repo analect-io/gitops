@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: argo-workflows
+  name: argo-server
   namespace: argo
 spec:
   hosts:
@@ -9,9 +9,10 @@ spec:
   gateways:
   - istio-system/istio-ingressgateway
   http:
-  - match:
-    - sniHosts:
-        - "workflows.analect.com"
+  - headers:
+      request:
+        set:
+          X-Forwarded-Port: "443"
     route:
     - destination:
         host: argo-server.argo.svc.cluster.local
