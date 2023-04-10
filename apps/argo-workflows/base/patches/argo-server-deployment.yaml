@@ -4,8 +4,10 @@
   path: /spec/template/spec/containers/0/args/-
   value:
     --auth-mode=sso
-    --auth-mode=client
-    --x-frame-options=SAMEORIGIN
+- op: add
+  path: /spec/template/spec/containers/0/args/-
+  value:
+    --auth-mode=client    
 - op: add
   path: /spec/template/spec/serviceAccountName
   value: argo-server
