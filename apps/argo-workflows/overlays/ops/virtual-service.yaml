@@ -9,7 +9,7 @@ spec:
   gateways:
   - istio-system/istio-ingressgateway
   http:
-    route:
+  - route:
     - destination:
         host: argo-server.argo.svc.cluster.local
         port:
