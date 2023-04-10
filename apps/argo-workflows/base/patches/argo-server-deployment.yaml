@@ -7,7 +7,11 @@
 - op: add
   path: /spec/template/spec/containers/0/args/-
   value:
-    --auth-mode=client    
+    --auth-mode=client
+- op: add
+  path: /spec/template/spec/containers/0/args/-
+  value:
+    --secure=false        
 - op: add
   path: /spec/template/spec/serviceAccountName
   value: argo-server
