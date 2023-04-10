@@ -9,13 +9,8 @@ spec:
   gateways:
   - istio-system/istio-ingressgateway
   http:
-  - headers:
-      request:
-        set:
-          X-Forwarded-Port: "443"
     route:
     - destination:
         host: argo-server.argo.svc.cluster.local
         port:
           number: 2746
-    timeout: 10s
