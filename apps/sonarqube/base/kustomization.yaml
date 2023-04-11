@@ -16,14 +16,12 @@ helmCharts:
       sonarqubeUsername: admin
       existingSecret: sonarqube-postgresql-secret
       replicaCount: 1
-      minHeapSize: 512m
-      maxHeapSize: 1024m
       resources:
         requests:
-          memory: 500Mi
+          memory: 1024Mi
           cpu: 100m
         limits:
-          memory: 1024Mi
+          memory: 2048Mi
           cpu: 200m
       service:
         type: ClusterIP
