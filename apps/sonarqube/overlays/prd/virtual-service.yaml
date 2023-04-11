@@ -11,10 +11,7 @@ spec:
   gateways:
   - istio-system/istio-ingressgateway
   http:
-  - match:
-    - uri:
-        prefix: /
-    route:
+  - route:
     - destination:
         port:
           number: 80
