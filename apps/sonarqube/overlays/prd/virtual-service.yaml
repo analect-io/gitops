@@ -11,9 +11,6 @@ spec:
   gateways:
   - istio-system/istio-ingressgateway
   http:
-  - retries:
-      attempts: 3
-      perTryTimeout: 2s
   - match:
     - uri:
         prefix: /
@@ -21,4 +18,4 @@ spec:
     - destination:
         port:
           number: 80
-        host: sonarqube #.sonarqube.svc.cluster.local
+        host: sonarqube.sonarqube.svc.cluster.local
