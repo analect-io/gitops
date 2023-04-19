@@ -27,8 +27,13 @@ rules:
   - apiGroups:
       - argoproj.io
     resources:
+      - eventsources
+      - sensors
       - workflows
+      - workfloweventbindings
       - workflowtemplates
+      - cronworkflows
+      - cronworkflows/finalizers
     verbs:
       - create
       - get
