@@ -28,9 +28,15 @@ rules:
       - argoproj.io
     resources:
       - workflows
+      - workflowtemplates
     verbs:
       - create
       - get
+      - list
+      - watch
+      - update
+      - patch
+      - delete
   # from https://argoproj.github.io/argo-workflows/argo-server-sso/
   - apiGroups:
       - ""
